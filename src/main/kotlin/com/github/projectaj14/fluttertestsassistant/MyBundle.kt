@@ -1,4 +1,4 @@
-package org.jetbrains.plugins.template
+package com.github.projectaj14.fluttertestsassistant
 
 import com.intellij.DynamicBundle
 import org.jetbrains.annotations.NonNls
