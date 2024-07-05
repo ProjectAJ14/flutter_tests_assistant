@@ -15,4 +15,13 @@
     <applicationListeners>
         <listener class="com.github.projectaj14.fluttertestsassistant.listeners.MyApplicationActivationListener" topic="com.intellij.openapi.application.ApplicationActivationListener"/>
     </applicationListeners>
+    <actions>
+        <action id="com.github.projectaj14.fluttertestsassistant.actions.CreateFlutterTestFileAction"
+                class="com.github.projectaj14.fluttertestsassistant.actions.CreateFlutterTestFileAction"
+                text="Create Flutter Test"
+                description="Create a matching test file for the current Dart file">
+            <add-to-group group-id="NewGroup" anchor="first"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="control alt T"/>
+        </action>
+    </actions>
 </idea-plugin>
