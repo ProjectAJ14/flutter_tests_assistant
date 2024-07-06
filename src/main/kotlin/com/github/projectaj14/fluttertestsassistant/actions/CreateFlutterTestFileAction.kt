@@ -4,20 +4,36 @@ import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.actionSystem.CommonDataKeys
 import com.intellij.openapi.fileEditor.FileEditorManager
+import com.intellij.openapi.project.DumbAware
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.ui.Messages
+import com.intellij.openapi.util.IconLoader
 import com.intellij.openapi.vfs.LocalFileSystem
 import com.intellij.openapi.vfs.VirtualFile
 import java.io.File
+import javax.swing.Icon
 
-class CreateFlutterTestFileAction : AnAction() {
+class CreateFlutterTestFileAction : AnAction(), DumbAware {
 
-    override fun actionPerformed(e: AnActionEvent) {
-        val project = e.project ?: run {
+    companion object {
+        private val ICON: Icon = IconLoader.getIcon("/icons/any_type.png", CreateFlutterTestFileAction::class.java)
+    }
+
+    init {
+        templatePresentation.icon = ICON
+    }
+
+    override fun update(e: AnActionEvent) {
+        super.update(e)
+        e.presentation.icon = ICON
+    }
+
+    override fun actionPerformed(event: AnActionEvent) {
+        val project = event.project ?: run {
             showError("No project found")
             return
         }
-        val file = e.getData(CommonDataKeys.VIRTUAL_FILE) ?: run {
+        val file = event.getData(CommonDataKeys.VIRTUAL_FILE) ?: run {
             showError("No file selected")
             return
         }
@@ -27,13 +43,12 @@ class CreateFlutterTestFileAction : AnAction() {
             return
         }
 
-        val libPath = findLibPath(file) ?: run {
+        val libFile = findLibFile(file) ?: run {
             showError("Selected file is not in the 'lib' directory")
             return
         }
 
-        val relativePath = file.path.substringAfter(libPath)
-        val testFilePath = createTestFilePath(project, relativePath)
+        val testFilePath = createTestFilePath(file, libFile)
 
         val testFile = File(testFilePath)
         if (testFile.exists()) {
@@ -43,22 +58,21 @@ class CreateFlutterTestFileAction : AnAction() {
         }
     }
 
-    private fun findLibPath(file: VirtualFile): String? {
+    private fun findLibFile(file: VirtualFile): VirtualFile? {
         var current: VirtualFile? = file.parent
         while (current != null) {
             if (current.name == "lib") {
-                return current.path
+                return current
             }
             current = current.parent
         }
         return null
     }
 
-    private fun createTestFilePath(project: Project, relativePath: String): String {
-        val projectDir = project.basePath ?: run {
-            showError("Unable to determine project base path")
-            return ""
-        }
+    private fun createTestFilePath(file: VirtualFile, libFile: VirtualFile): String {
+        val projectDir = libFile.parent.path;
+        val relativePath = file.path.substringAfter(libFile.path)
+
         val testDir = File(projectDir, "test")
         if (!testDir.exists() && !testDir.mkdirs()) {
             showError("Failed to create 'test' directory")

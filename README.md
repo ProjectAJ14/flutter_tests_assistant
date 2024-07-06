@@ -5,17 +5,11 @@
 [![Downloads](https://img.shields.io/jetbrains/plugin/d/24789.svg)](https://plugins.jetbrains.com/plugin/24789)
 
 <!-- Plugin description -->
-        Flutter Tests Assistant
         Generates test files for your Flutter and Dart projects with ease.
-        Key features:
-        - Creates a matching test file for any Dart file in your 'lib' directory
-        - Maintains the same directory structure in the 'test' folder as in 'lib'
-        - Generates a basic test template to get you started quickly
-        - Easily accessible via a context menu action or customizable keyboard shortcut
-        - Opens the newly created or existing test file for immediate editing
-        Boost your test-driven development practices and maintain a well-structured test suite effortlessly. Perfect for
-        Flutter developers of all levels looking to improve code quality and test coverage.
 <!-- Plugin description end -->
+
+<img src="img/demo.gif" alt="In action"/>
+
 
 ## Installation
 
@@ -28,6 +22,11 @@
 
   Download the [latest release](https://github.com/ProjectAJ14/flutter_tests_assistant/releases/latest) and install it manually using
   <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>⚙️</kbd> > <kbd>Install plugin from disk...</kbd>
+
+
+## What's new?
+
+See [CHANGELOG](CHANGELOG.md) to see what's new.
 
 
 ---
