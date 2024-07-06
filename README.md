@@ -1,22 +1,18 @@
 # flutter_tests_assistant
 
 ![Build](https://github.com/ProjectAJ14/flutter_tests_assistant/workflows/Build/badge.svg)
-[![Version](https://img.shields.io/jetbrains/plugin/v/MARKETPLACE_ID.svg)](https://plugins.jetbrains.com/plugin/MARKETPLACE_ID)
-[![Downloads](https://img.shields.io/jetbrains/plugin/d/MARKETPLACE_ID.svg)](https://plugins.jetbrains.com/plugin/MARKETPLACE_ID)
+[![Version](https://img.shields.io/jetbrains/plugin/v/24789.svg)](https://plugins.jetbrains.com/plugin/24789)
+[![Downloads](https://img.shields.io/jetbrains/plugin/d/24789.svg)](https://plugins.jetbrains.com/plugin/24789)
 
 <!-- Plugin description -->
         Flutter Tests Assistant
-
-        Streamline your Flutter development workflow with this plugin that automatically generates test files for your
-        Dart code.
-
+        Generates test files for your Flutter and Dart projects with ease.
         Key features:
         - Creates a matching test file for any Dart file in your 'lib' directory
         - Maintains the same directory structure in the 'test' folder as in 'lib'
         - Generates a basic test template to get you started quickly
         - Easily accessible via a context menu action or customizable keyboard shortcut
         - Opens the newly created or existing test file for immediate editing
-
         Boost your test-driven development practices and maintain a well-structured test suite effortlessly. Perfect for
         Flutter developers of all levels looking to improve code quality and test coverage.
 <!-- Plugin description end -->
