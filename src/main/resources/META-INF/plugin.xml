@@ -1,24 +1,28 @@
-<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <id>com.github.projectaj14.fluttertestsassistant</id>
-    <name>flutter_tests_assistant</name>
-    <vendor>projectaj14</vendor>
-
+    <name>Flutter Tests Assistant</name>
+    <vendor>Nonstop IO</vendor>
     <depends>com.intellij.modules.platform</depends>
+    <description>
+        Flutter Tests Assistant
 
-    <resource-bundle>messages.MyBundle</resource-bundle>
+        Streamline your Flutter development workflow with this plugin that automatically generates test files for your
+        Dart code.
 
-    <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.projectaj14.fluttertestsassistant.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
-    </extensions>
+        Key features:
+        - Creates a matching test file for any Dart file in your 'lib' directory
+        - Maintains the same directory structure in the 'test' folder as in 'lib'
+        - Generates a basic test template to get you started quickly
+        - Easily accessible via a context menu action or customizable keyboard shortcut
+        - Opens the newly created or existing test file for immediate editing
 
-    <applicationListeners>
-        <listener class="com.github.projectaj14.fluttertestsassistant.listeners.MyApplicationActivationListener" topic="com.intellij.openapi.application.ApplicationActivationListener"/>
-    </applicationListeners>
+        Boost your test-driven development practices and maintain a well-structured test suite effortlessly. Perfect for
+        Flutter developers of all levels looking to improve code quality and test coverage.
+    </description>
     <actions>
         <action id="com.github.projectaj14.fluttertestsassistant.actions.CreateFlutterTestFileAction"
                 class="com.github.projectaj14.fluttertestsassistant.actions.CreateFlutterTestFileAction"
-                text="Create Flutter Test"
+                text="Create Flutter Test File"
                 description="Create a matching test file for the current Dart file">
             <add-to-group group-id="NewGroup" anchor="first"/>
             <keyboard-shortcut keymap="$default" first-keystroke="control alt T"/>
