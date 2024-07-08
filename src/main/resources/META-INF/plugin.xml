@@ -1,12 +1,9 @@
 <idea-plugin>
     <id>com.github.projectaj14.fluttertestsassistant</id>
     <name>Flutter Tests Assistant</name>
-    <vendor>Nonstop IO</vendor>
+    <vendor email="ajay.kumar@nonstopio.com">NonStop io Technologies Pvt. Ltd.</vendor>
     <depends>com.intellij.modules.platform</depends>
-    <description><![CDATA[
-    Generates test files for your Flutter and Dart projects with ease.
-    ]]>
-    </description>
+    <idea-version since-build="223"/>
     <actions>
         <action id="com.github.projectaj14.fluttertestsassistant.actions.CreateFlutterTestFileAction"
                 class="com.github.projectaj14.fluttertestsassistant.actions.CreateFlutterTestFileAction"

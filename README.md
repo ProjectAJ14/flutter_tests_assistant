@@ -5,7 +5,18 @@
 [![Downloads](https://img.shields.io/jetbrains/plugin/d/24789.svg)](https://plugins.jetbrains.com/plugin/24789)
 
 <!-- Plugin description -->
-        Generates test files for your Flutter and Dart projects with ease.
+    Flutter Tests Assistant
+      Features:
+    
+        - Support for creating and opening Dart test files
+        - Mono-repo support
+    
+      Features Coming Soon!
+    
+        - Keep lib and test directories in sync after renaming or moving the file
+        - Create test files with custom templates
+  
+    Not an official plugin.
 <!-- Plugin description end -->
 
 <img src="img/demo.gif" alt="In action"/>
